@@ -21,7 +21,7 @@ files:
 -  `contents.rst <./contents.rst>`__ -- master document containing the
    specification for the global documentation structure
 
--  conf.py -- configuration file for ``sphinx``
+-  `conf.py <./conf.py>`__ -- configuration file for ``sphinx``
 
 The documentation proper is arranged into the following subdirectories:
 
@@ -45,7 +45,7 @@ The documentation proper is arranged into the following subdirectories:
 -  `sphinxext <./sphinxext>`__ -- ``sphinx`` extensions for
    ``matplotlib`` documentation
 
--  `mpl\_examples <./mpl_examples>`__ - symbolic link to top-level
+-  `mpl\_examples <./mpl_examples>`__ -- symbolic link to top-level
    `examples <../examples>`__ directory, so that examples may be
    referenced from within documentation
 
@@ -69,7 +69,7 @@ the ``matplotlib`` package, since the needed file
 Building the ``matplotlib`` package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Begig by building the ``matplotlib`` package, using the command
+Begin by building the ``matplotlib`` package, using the command
 
 ::
 
@@ -121,7 +121,7 @@ PDFs. To do so, run the command
 PDF output
 ^^^^^^^^^^
 
-To build the PDF documentation, replace ``html`` by ``latex`` in the
+To build the documentation in PDF format, replace ``html`` by ``latex`` in the
 above commands.
 
 Cleaning
