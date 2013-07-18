@@ -14,7 +14,7 @@ This directory contains the following top-level documentation build files:
 
 * [make.py](./make.py) -- main Python script to build the HTML and  PDF documentation
 
-* [contents.rst](./index.rst) -- master document which pulls in all 
+* [contents.rst](./contents.rst) -- master document which pulls in all 
 `matplotlib` documentation
 
 * [conf.py](conf.py) -- configuration file for `sphinx`
