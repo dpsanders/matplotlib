@@ -31,6 +31,8 @@ The documentation proper is arranged into the following subdirectories:
 
 * [glossary](./glossary) -- glossary of useful terms
 
+* [pyplots](./pyplots) -- examples for the screenshots page
+
 * [api](./api) -- placeholders to automatically generate API documentation
 
 * [mpl_toolkits](./mpl_toolkits) -- documentation for toolkits shipped with `matplotlib`
