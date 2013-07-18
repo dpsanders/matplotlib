@@ -1,53 +1,82 @@
-maptlotlib documentation
+`matplotlib` documentation tree 
 ========================
 
-This is the top level build directory for the matplotlib
-documentation.  All of the documentation is written using sphinx, a
-python documentation system built on top of ReST.  This directory contains
+This is the top-level directory of the ``matplotlib``
+documentation tree.  
+
+The `matplotlib` documentation is written using [Sphinx](http://sphinx-doc.org/), a
+Python documentation system built on top of the lightweight markup language [ReStructuredText](http://docutils.sourceforge.net/rst.html) (ReST).
+
+## Contents
+
+This directory contains the following subdirectories:
 
 
-* users - the user documentation, eg plotting tutorials, configuration
-  tips, etc.
+* [users](./users) -- the user documentation, including plotting tutorials and configuration tips
 
-* devel - documentation for matplotlib developers
+* [devel](./devel) -- documentation for `matplotlib` developers
 
-* faq - frequently asked questions
+* [faq](./faq) -- frequently asked questions
 
-* api - placeholders to automatically generate the api documentation
+* [api](./api) -- placeholders to automatically generate the API documentation
 
-* mpl_toolkits - documentation of individual toolkits that ship with
-  matplotlib
+* [mpl_toolkits](./mpl_toolkits) -- documentation of toolkits that ship with `matplotlib`
 
-* make.py - the build script to build the html or PDF docs
+* [sphinxext](./sphinxext) -- `sphinx` extensions for the `matplotlib` docs
 
-* index.rst - the top level include document for matplotlib docs
+* [mpl_examples](./mpl_examples) - a symbolic link to the `matplotlib` examples (found in the directory above), so that examples may be referenced from within the documentation
 
-* conf.py - the sphinx configuration
+ * [_static](./_static) -- used by the `sphinx` build system
 
-* _static - used by the sphinx build system
+* [_templates](./_templates) -- used by the `sphinx` build system
+  
 
-* _templates - used by the sphinx build system
+and the following files:
 
-* sphinxext - Sphinx extensions for the mpl docs
 
-* mpl_examples - a link to the matplotlib examples in case any
-  documentation wants to literal include them
+* `make.py` -- the main script used to build the HTML and  PDF documentation
 
-To build the HTML documentation, install sphinx (1.0 or greater
-required), then type "python make.py html" in this directory.  Wait
-for the initial run (which builds the example gallery) to be done,
-then run "python make.py html" again. The top file of the results will
-be ./build/html/index.html
+* `index.rst` -- the top-level include document for `matplotlib` documentation
 
-Note that Sphinx uses the installed version of the package to build
-the documentation, so matplotlib must be installed *before* the docs
-can be generated. Even if that is the case, one of the files needed
-to do this, '../lib/matplotlib/mpl-data/matplotlibrc', is not version
-controlled, but created when matplotlib is built. This means that the
-documentation cannot be generated immediately after checking out the
-source code, even if matplotlib is installed on your system: you will
-have to run ``python setup.py build`` first.
+* `conf.py` -- the `sphinx` configuration
 
-To build a smaller version of the documentation (without
-high-resolution PNGs and PDF examples), type "python make.py --small
-html".
+
+## Building the documentation
+
+
+To build the HTML documentation, install `sphinx` (version 1.0 or greater
+is required), then type 
+
+	python make.py html
+
+from within this directory (`doc`).  
+
+Wait
+for the initial run, which builds the example gallery, to be done,
+then run the same command for a second time:
+
+	python make.py html 
+
+The entry point for the HTML documentation is now available in `./build/html/index.html`
+
+Note that `sphinx` uses the installed version of the package to build
+the documentation, so `matplotlib` must be installed *before* the docs
+can be generated. 
+
+Even if that is the case, one of the files needed
+to do this, `../lib/matplotlib/mpl-data/matplotlibrc`, is created
+in the `matplotlib` build process. This means that the
+documentation *cannot* be generated immediately after checking out the
+source code, even if `matplotlib` is installed on your system; rather, it is required to first build `matplotlib` by running
+
+	python setup.py build
+
+from the root of the source tree.
+
+Since the documentation takes a long time to build, it is possible to
+ build a reduced version, which does not include
+high-resolution PNGs and PDFs. To do so, run the command
+
+	python make.py --small html
+
+To build the PDF documentation, replace `html` by `pdf` in the above commands.
