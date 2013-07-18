@@ -46,8 +46,6 @@ The documentation proper is arranged into the following subdirectories:
 * [_templates](./_templates) -- used by the `sphinx` build system
   
 
-and 
-
 
 ## Building the documentation
 
