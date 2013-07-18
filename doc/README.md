@@ -1,7 +1,7 @@
 `matplotlib` documentation tree 
 ========================
 
-This directory (`doc`) is the top-level directory of the ``matplotlib``
+The current directory (`doc`) is the top level  of the ``matplotlib``
 documentation tree.  
 
 The `matplotlib` documentation is written using [Sphinx](http://sphinx-doc.org/), a
@@ -9,13 +9,13 @@ Python documentation system built on top of the lightweight markup language [ReS
 
 ## Contents
 
-This directory contains the following top-level documentation build files:
+This  directory contains the following top-level documentation build files:
 
 
 * [make.py](./make.py) -- main Python script to build the HTML and  PDF documentation
 
-* [contents.rst](./contents.rst) -- master document which pulls in all 
-`matplotlib` documentation
+* [contents.rst](./contents.rst) -- master document containing the specification for the global documentation structure 
+
 
 * [conf.py](conf.py) -- configuration file for `sphinx`
 
@@ -49,21 +49,26 @@ The documentation proper is arranged into the following subdirectories:
 
 ## Building the documentation
 
-### Building the `matplotlib` package
-
-Since `sphinx` uses the installed version of `matplotlib` to build
-the documentation, the whole package must be installed *before* the docs
+`Sphinx` uses the result of *building* the  `matplotlib` package itself in order to generate
+the documentation; so this build must be performed *before* the documentation
 can be generated. 
+
+
 
 Furthermore, even if `matplotlib` is already installed on your system, it is *not* possible to build the documentation without first building the 
 `matplotlib` package, since the needed file [../lib/matplotlib/mpl-data/matplotlibrc](../lib/matplotlib/mpl-data/matplotlibrc) is itself created
 during the `matplotlib` build process. 
 
-To build the `matplotlib` package, run the command
+### Building the `matplotlib` package
+
+
+Begig by building the `matplotlib` package, using the command
 
 	python setup.py build
 
 from the [root](..) of the source tree.
+
+
 
 
 ### Building the documentation
@@ -71,11 +76,15 @@ from the [root](..) of the source tree.
 To build the HTML documentation, `sphinx` (version >= 1.0)
 is required. 
 
-First the example gallery must be built, by running the command
+#### Example gallery
+
+First, the example gallery is built, by running the command
 
 	python make.py html
 
-from within the current directory (`doc`). The gallery is then located at [build/html/gallery.html](build/html/gallery.html).
+from within the current directory (`doc`). The gallery is built at [build/html/gallery.html](build/html/gallery.html).
+
+#### Complete documentation
 
 Now the documentation build is completed by repeating the same command:
 
@@ -83,6 +92,7 @@ Now the documentation build is completed by repeating the same command:
 
 The entry point for the HTML documentation is now available at [build/html/index.html](./build/html/index.html).
 
+#### Reduced process
 
 Since the documentation takes a long time to build, it is possible to
  build a reduced version, which does not include
@@ -90,7 +100,11 @@ high-resolution PNGs and PDFs. To do so, run the command
 
 	python make.py --small html
 
+#### PDF output
+
 To build the PDF documentation, replace `html` by `latex` in the above commands.
+
+#### Cleaning
 
 To clean the documentation, i.e. to remove the generated files, run
 
