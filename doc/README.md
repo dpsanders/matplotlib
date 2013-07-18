@@ -1,7 +1,7 @@
 `matplotlib` documentation tree 
 ========================
 
-This is the top-level directory of the ``matplotlib``
+This directory (`doc`) is the top-level directory of the ``matplotlib``
 documentation tree.  
 
 The `matplotlib` documentation is written using [Sphinx](http://sphinx-doc.org/), a
@@ -50,17 +50,14 @@ the documentation, the whole package must be installed *before* the docs
 can be generated. 
 
 Furthermore, even if `matplotlib` is already installed on your system, it is *not* possible to build the documentation without first building the 
-`matplotlib` package, since the file [../lib/matplotlib/mpl-data/matplotlibrc](../lib/matplotlib/mpl-data/matplotlibrc), which is required during the process, is itself created
+`matplotlib` package, since the needed file [../lib/matplotlib/mpl-data/matplotlibrc](../lib/matplotlib/mpl-data/matplotlibrc) is itself created
 during the `matplotlib` build process. 
 
 To build the `matplotlib` package, run the command
 
-
-
-
 	python setup.py build
 
-from the root of the source tree.
+from the [root](..) of the source tree.
 
 
 ### Building the documentation
