@@ -9,36 +9,42 @@ Python documentation system built on top of the lightweight markup language [ReS
 
 ## Contents
 
-This directory contains the following subdirectories:
+This directory contains the following top-level documentation build files:
 
 
-* [users](./users) -- the user documentation, including plotting tutorials and configuration tips
+* [make.py](./make.py) -- main Python script to build the HTML and  PDF documentation
+
+* [contents.rst](./index.rst) -- master document which pulls in all 
+`matplotlib` documentation
+
+* [conf.py](conf.py) -- configuration file for `sphinx`
+
+
+The documentation proper is arranged into the following subdirectories:
+
+
+* [users](./users) -- user documentation, including plotting tutorials and configuration tips
 
 * [devel](./devel) -- documentation for `matplotlib` developers
 
-* [faq](./faq) -- frequently asked questions
+* [faq](./faq) -- frequently-asked questions
 
-* [api](./api) -- placeholders to automatically generate the API documentation
+* [glossary](./glossary) -- glossary of useful terms
 
-* [mpl_toolkits](./mpl_toolkits) -- documentation of toolkits that ship with `matplotlib`
+* [api](./api) -- placeholders to automatically generate API documentation
 
-* [sphinxext](./sphinxext) -- `sphinx` extensions for the `matplotlib` docs
+* [mpl_toolkits](./mpl_toolkits) -- documentation for toolkits shipped with `matplotlib`
 
-* [mpl_examples](./mpl_examples) - a symbolic link to the `matplotlib` examples (found in the directory above), so that examples may be referenced from within the documentation
+* [sphinxext](./sphinxext) -- `sphinx` extensions for `matplotlib` documentation
+
+* [mpl_examples](./mpl_examples) - symbolic link to top-level [examples](../examples) directory, so that examples may be referenced from within documentation
 
 * [_static](./_static) -- used by the `sphinx` build system
 
 * [_templates](./_templates) -- used by the `sphinx` build system
   
 
-and the following files:
-
-
-* [make.py](./make.py) -- the main script used to build the HTML and  PDF documentation
-
-* [index.rst](./index.rst) -- the top-level include document for `matplotlib` documentation
-
-* [conf.py](conf.py) -- the `sphinx` configuration
+and 
 
 
 ## Building the documentation
@@ -84,4 +90,8 @@ high-resolution PNGs and PDFs. To do so, run the command
 
 	python make.py --small html
 
-To build the PDF documentation, replace `html` by `pdf` in the above commands.
+To build the PDF documentation, replace `html` by `latex` in the above commands.
+
+To clean the documentation, i.e. to remove the generated files, run
+
+	python make.py clean
